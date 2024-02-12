@@ -1,0 +1,75 @@
+<mat-card><mat-card-title>Edit the User</mat-card-title>
+    <mat-card-content style="padding-top: 20px;">
+<form action="" [formGroup]="editUserForm" (ngSubmit)="updateUser()" *ngIf="userDetails">
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter the name"
+            formControlName="fullname"
+          />
+          <mat-icon matSuffix>how_to_reg</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Enter Username"
+            formControlName="uname"
+          />
+          <mat-icon matSuffix>person_search</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input
+            matInput
+            placeholder="Enter Email Id"
+            formControlName="emailid"
+          />
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input
+            matInput
+            placeholder="Enter Mobile number"
+            formControlName="phone"
+  
+          />
+          <mat-icon matSuffix>perm_phone_msg</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Company</mat-label>
+          <input
+            matInput
+            placeholder="Enter Company name"
+            formControlName="company"
+  
+          />
+          <mat-icon matSuffix>work_history</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <input
+            matInput
+            placeholder="Enter Address"
+            formControlName="add"
+          />
+          <mat-icon matSuffix>gps_fixed</mat-icon>
+        </mat-form-field>
+      </p>
+      <button type="submit" mat-raised-button color="primary">Update User</button> 
+</form>
+</mat-card-content>
+</mat-card>

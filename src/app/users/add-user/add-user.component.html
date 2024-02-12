@@ -1,0 +1,109 @@
+<mat-card>
+  <mat-card-title>Create New User</mat-card-title>
+  <mat-card-content>
+  <form class="form" action="" [formGroup]="addUserForm" (ngSubmit)="createuser()">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter the name"
+          formControlName="name"
+        />
+        <mat-icon matSuffix>how_to_reg</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('required')">
+            Full Name is required
+         </mat-error>
+         <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('minlength')">
+             Full Name should be at least 6 characters long
+          </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Enter Username"
+          formControlName="username"
+        />
+        <mat-icon matSuffix>person_search</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['username'].errors && addUserForm.controls['username'].hasError('required')">
+           User Name is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['username'].errors && addUserForm.controls['username'].hasError('minlength')">
+            User Name should be at least 6 characters long
+         </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          matInput
+          placeholder="Enter Email Id"
+          formControlName="email"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('required')">
+            Email Address is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('email')">
+           Email Address is not Valid
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input
+          matInput
+          placeholder="Enter Mobile number"
+          formControlName="mobile"
+
+        />
+        <mat-icon matSuffix>perm_phone_msg</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['mobile'].errors && addUserForm.controls['mobile'].hasError('required')">
+            Mobile Number is required
+        </mat-error>
+        <!-- <mat-error *ngIf="addUserForm.controls['mobile'].errors && addUserForm.controls['mobile'].hasError('maxlength')">
+            Mobile Number should not exceed 10 digits
+        </mat-error> -->
+        <mat-error *ngIf="addUserForm.controls['mobile'].errors && addUserForm.controls['mobile'].hasError('pattern')">
+            Mobile Number should be numeric
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <input
+          matInput
+          placeholder="Enter Company name"
+          formControlName="company"
+
+        />
+        <mat-icon matSuffix>work_history</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['company'].errors && addUserForm.controls['company'].hasError('required')">
+            Company Name is required
+         </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          placeholder="Enter Address"
+          formControlName="address"
+        />
+        <mat-icon matSuffix>gps_fixed</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['address'].errors && addUserForm.controls['address'].hasError('required')">
+            Address is required
+         </mat-error>
+      </mat-form-field>
+    </p>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!addUserForm.valid || submitted">Create User</button> 
+  </form>
+</mat-card-content>
+</mat-card>

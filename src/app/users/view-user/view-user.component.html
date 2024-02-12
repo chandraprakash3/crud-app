@@ -1,0 +1,14 @@
+<mat-card class="userDetails" *ngIf="userDetails">
+  <mat-card-title> {{ userDetails.name }}</mat-card-title>
+  <mat-card-content> <span [ngStyle]="{color:'grey'}">Username:</span> {{ userDetails.username }} </mat-card-content>
+  <mat-card-content> <span [ngStyle]="{color:'grey'}">Company:</span> {{ userDetails.company.name }} </mat-card-content>
+  <mat-card-content> <span [ngStyle]="{color:'grey'}">Email Id:</span> {{ userDetails.email }} </mat-card-content>
+  <mat-card-content> <span [ngStyle]="{color:'grey'}">Mobile:</span> {{ userDetails.phone }} </mat-card-content>
+  <mat-card-content>
+    <span [ngStyle]="{color:'grey'}">ProfileUrl:</span> <a href="">{{ userDetails.website }}</a>
+  </mat-card-content>
+  <mat-card-content>
+    <span [ngStyle]="{color:'grey'}">Address:</span>{{ userDetails.address.city }} |
+    <span [ngStyle]="{color:'grey'}">ZipCode:</span>{{ userDetails.address.zipcode }}
+  </mat-card-content>
+</mat-card>
